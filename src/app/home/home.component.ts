@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
         console.log('completed');
       })
       .fail((erroor) => {
-        console.log(erroor);
+        console.log(erroor); // added
       });
   }
 }
