@@ -1,0 +1,8 @@
+<h3>Todos List</h3>
+
+@if (!todoItems().length) {
+    <p>Loading...</p>
+}
+@for (item of todoItems(); track item.id) {
+    <app-todo-item [todo]="item" />
+}

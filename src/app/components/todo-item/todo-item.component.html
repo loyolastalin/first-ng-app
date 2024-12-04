@@ -1,0 +1,4 @@
+<li class="todos__item" appHighlightCompletedTodo [isCompleted]="todo().completed">
+  <input id="todo-{{ todo().id }}" type="checkbox" [checked]="todo().completed" />
+  <label for="todo-{{ todo().id }}">{{ todo().title }}</label>
+</li>
