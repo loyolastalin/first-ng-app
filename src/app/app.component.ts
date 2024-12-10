@@ -4,11 +4,13 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WeatherForecast } from './model/weather.type';
 import oboe from 'oboe';
+import { CommonModule } from '@angular/common';
+import { MsalModule } from '@azure/msal-angular';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet,  CommonModule, MsalModule,HeaderComponent],
   template: `
  <app-header/>
 <router-outlet/>

@@ -4,6 +4,14 @@
     <ul>
       <li routerLink="/todo">todo</li>
     </ul>
+    <div class="button-group">
+      <ng-container *ngIf="!loginDisplay">
+        <button mat-menu-item class="btn btn-primary" (click)="loginRedirect()">Login</button>
+      </ng-container>
+      <ng-container *ngIf="loginDisplay">
+        <button mat-menu-item class="btn btn-secondary" (click)="logout()">Logout</button>
+      </ng-container>
+    </div>
   </nav>
 </header>
 
