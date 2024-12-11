@@ -1,0 +1,26 @@
+<p>Streaming the Weather API </p>
+<br/>
+<div class="button-group">
+    <ng-container>
+      <button mat-menu-item class="btn btn-primary" (click)="LoadweatherAPI()">weather without streaming</button>
+    </ng-container>
+    <ng-container>
+      <button mat-menu-item class="btn btn-primary" (click)="LoadweatherAPIStream()">weather with streaming</button>
+    </ng-container>
+    <ng-container>
+      <button mat-menu-item class="btn btn-secondary" (click)="LoadPlatformAPI()">Platform</button>
+    </ng-container>
+  </div>
+@for (weather of weathers(); track weather.date) {
+    <label>{{weather.summary}}</label>
+    <br/>
+}
+
+@for (weather of weathersArray; track weather.date) {
+  <label>{{weather.summary}}</label>
+  <br/>
+}
+@for (platform of platforms; track platform.id) {
+  <label>{{platform.id}} - {{platform.name}} </label>
+  <br/>
+}

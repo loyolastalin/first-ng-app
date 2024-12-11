@@ -14,29 +14,9 @@ import oboe from 'oboe';
 })
 export class HomeComponent implements OnInit {
   homeMessage = signal('From Parent , Hello world');
-  weathers: WeatherForecast[] = [];
-  private apiURL = 'https://stalinweatherwebapi.azurewebsites.net/api/weather';
-
   keyUpHandler(event: KeyboardEvent) {
     console.log(`user pressed the ${event.key} key`);
   }
-  ngOnInit(): void {
-    const options: oboe.Options = {
-      url: this.apiURL,
-      method: 'GET',
-    };
-
-    const oboeService = oboe(options);
-    oboeService
-      .node('!.*', (weather: WeatherForecast) => {
-        this.weathers.push(weather);
-        console.log(weather);
-      })
-      .done((_) => {
-        console.log('completed');
-      })
-      .fail((erroor) => {
-        console.log(erroor); // added
-      });
+  ngOnInit(): void {    
   }
 }

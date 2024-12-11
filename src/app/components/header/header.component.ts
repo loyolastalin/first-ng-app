@@ -86,6 +86,7 @@ export class HeaderComponent {
 
   setLoginDisplay() {
     this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
+
   }
   checkAndSetActiveAccount() {
     /**
@@ -105,6 +106,8 @@ export class HeaderComponent {
   }
   loginRedirect() {
     this.setLoginDisplay();
+    console.log('aded id token')
+    console.log(this.authService.instance.getActiveAccount()?.idToken);
     if (this.msalGuardConfig.authRequest) {
       this.authService.loginRedirect({
         ...this.msalGuardConfig.authRequest,

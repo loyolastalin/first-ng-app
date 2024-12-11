@@ -28,6 +28,7 @@ export class LoginService {
         )
         .subscribe((result: EventMessage) => {
             const payload = result.payload as AuthenticationResult;
+            localStorage.setItem("accessToken", payload.accessToken);
             this.authService.instance.setActiveAccount(payload.account);
         });
 

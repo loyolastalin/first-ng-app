@@ -6,6 +6,7 @@ import { WeatherForecast } from './model/weather.type';
 import oboe from 'oboe';
 import { CommonModule } from '@angular/common';
 import { MsalModule } from '@azure/msal-angular';
+import { StreamingComponent } from './streaming/streaming.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import { MsalModule } from '@azure/msal-angular';
   imports: [RouterOutlet,  CommonModule, MsalModule,HeaderComponent],
   template: `
  <app-header/>
-<router-outlet/>
+ <router-outlet/>
   `,
   styles: [],
 })

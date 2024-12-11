@@ -5,7 +5,6 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    canActivate:[MsalGuard],
     loadComponent: () => {
       return import('./home/home.component').then((m) => m.HomeComponent);
     },
@@ -14,5 +13,10 @@ export const routes: Routes = [
     path: 'todo',
     canActivate:[MsalGuard],
     loadComponent : () => { return import('./todo/todo.component').then( (m) => m.TodoComponent)}
+  },
+  {
+    path: 'stream',
+    canActivate:[MsalGuard],
+    loadComponent : () => { return import('./streaming/streaming.component').then( (m) => m.StreamingComponent)}
   }
 ];
